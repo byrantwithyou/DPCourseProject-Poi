@@ -1,7 +1,7 @@
 # DPCourseProject-Poi
 This is the git repo for the "Design Pattern" course project given in School of Software Engineering, Tongji University, Fall 2018. The instructor is Jie Hou and Jinsong Feng.
 
-##Git 使用规范
+## Git 使用规范
 
 1. 分支说明
 - master分支：不要管
@@ -37,7 +37,7 @@ git push origin feature/X
 7. 去GitHub上发Pull Request请求:feature/X - > develop(**微信上提前告诉我一声再发Pull Request**)
 
 
-##代码规范
+## 代码规范
 1. 类名：首字母大写、驼峰
 2. 变量、属性、方法：首字母小写、驼峰
 3. 注释：尽量采用Java Doc规范
