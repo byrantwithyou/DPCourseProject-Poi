@@ -12,7 +12,7 @@ public abstract class BaseTools {
 	}
 
 	public boolean isBusy() {
-		return true;
+		return false;
 	}
 	
 	public abstract void work();
