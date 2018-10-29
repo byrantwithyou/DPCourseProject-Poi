@@ -2,12 +2,10 @@ package goods;
 
 import tools.Tools;
 
-public class HomemadeGoods extends Goods {
+public class HomemadeGoods extends Goods{
 	
 	private Tools maker;
 	
-	
-
 	public HomemadeGoods() {
 	}
 	

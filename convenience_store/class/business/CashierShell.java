@@ -51,7 +51,7 @@ public class CashierShell {
 			System.out.println("--- 已至可恢复末尾 ---\n");
 			return;
 		}
-
+		System.out.println(CashierShell.getInstance().getClass().getName() + " undo last command");
 		//CancelableCommand command = commandsList.get(numCommands - 1);
 		//应该获取receiver的，下面这样处理不太好
 		currentList.reinstateMemento(mementoList.get(numCommands - 1));
@@ -64,6 +64,7 @@ public class CashierShell {
 			System.out.println("--- 已至可重做末尾 ---\n");
 			return;
 		}
+		System.out.println(CashierShell.getInstance().getClass().getName() + " redo last command");
 		commandsList.get(numCommands).execute();
 		numCommands++;
 	}
@@ -90,7 +91,8 @@ public class CashierShell {
 							"redo		| 重做\n" +
 							"print		| 打印当前结帐单内容\n" +
 							"mknew		| 新的顾客\n" +
-							"mkcoffee		| 制作当前结帐单的咖啡");
+							"mkcoffee		| 添加制作咖啡\n" +
+							"mkmtea		| 添加制作奶茶");
 		String input;
 		Scanner scanner = new Scanner(System.in);
 		CashierShell shell = CashierShell.getInstance();
@@ -131,6 +133,16 @@ public class CashierShell {
 				continue;
 			}
 
+			if (orders[0].equals("mkmtea")) {
+				System.out.println("正在添加一杯奶茶，请输入制作参数命令");
+				System.out.println(" 0.pearlMilkTea 1.taroMilkTea 2.strawberryMilkTea\n" +
+						" 0.cool 1.normal 2.hot\n" +
+						" 0.freesugar 1.halfsugar 2.regularsugar\n" +
+						" 0.coconut 1.pudding 2.bean");
+				MakeMilkTeaCommand mkTeaCommand = new MakeMilkTeaCommand(CashierShell.currentList,scanner.nextLine());
+				CashierShell.runCommand(mkTeaCommand);
+				continue;
+			}
 			if (orders[0].equals("print")) {
 				CashierShell.currentList.printAll();
 			}
