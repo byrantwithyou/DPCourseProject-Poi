@@ -1,6 +1,7 @@
 package business;
 
 import com.sun.tools.javac.Main;
+import visitor.ConcreteVisitor;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -20,6 +21,7 @@ public class CashierShell {
 	private static OrderList currentList; //结帐单存储结构
 	private static OrderController listController;
 	private static OrderView orderView;
+
 
 	static int numCommands; //当前列表内command的数量
 	static int highWater; //当前状态表内数量
