@@ -1,16 +1,18 @@
-package ChainofResponsibility;
+package useTools;
 
-import tools.CoffeeMaker;
+import Requests.Request;
+import Requests.RequestCategory;
+import tools.MilkTeaMaker;
 
 /**
  * @author Zhou Hongyu
  */
-public class CoffeeMakerHandler extends Handler {
+public class MilkTeaMakerHandler extends Handler {
     /**
-     * @param c 将handler与一个CoffeeMaker绑定
+     * @param m 将handler与一个MilkTeaMaker绑定
      */
-    public CoffeeMakerHandler(CoffeeMaker c) {
-        super(c);
+    public MilkTeaMakerHandler(MilkTeaMaker m) {
+        super(m);
     }
 
     /**
@@ -20,8 +22,8 @@ public class CoffeeMakerHandler extends Handler {
      */
     @Override
     public Boolean handleReq(Request request) {
-        if(request.getCategory() == RequestCategory.makeCoffe && !isBusy()){
-            handle();
+        if(request.getCategory() == RequestCategory.makeMilkTea && !isBusy()){
+            handle(request.RequestBag);
             request.handled();
             return true;
         }

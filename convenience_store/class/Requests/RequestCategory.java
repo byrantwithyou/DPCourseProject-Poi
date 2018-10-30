@@ -1,4 +1,4 @@
-package ChainofResponsibility;
+package Requests;
 
 /**
  * 请求的枚举类型

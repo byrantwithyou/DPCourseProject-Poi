@@ -1,4 +1,6 @@
-package ChainofResponsibility;
+package useTools;
+import Requests.Request;
+import Requests.RequestCategory;
 import tools.Scanner.RealScanner;
 
 /**
@@ -20,7 +22,7 @@ public class ScannerHandler extends Handler {
     @Override
     public Boolean handleReq(Request request) {
         if(request.getCategory() == RequestCategory.scanCode && !isBusy()){
-            handle();
+            handle(request.RequestBag);
             request.handled();
             return true;
         }

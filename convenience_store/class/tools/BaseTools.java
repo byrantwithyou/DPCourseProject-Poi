@@ -3,21 +3,21 @@ package tools;
 public abstract class BaseTools {
 	
 	private String id;
-	private boolean isBusy;
+	private boolean isbusy;
 //	private String name;
 	
 
-
+	public abstract void work(Object requestBag);
 	public BaseTools() {
-        this.isBusy = false;
+        this.isbusy = false;
 	}
 
-	public boolean checkIfBusy() {
-		return isBusy;
+	public boolean isBusy() {
+		return isbusy;
 	}
 
-    public void setBusy(boolean isBusy) {
-        this.isBusy = isBusy;
+    public void setIsbusy(boolean isBusy) {
+        this.isbusy = isBusy;
     }
 	
 	public String getId() {

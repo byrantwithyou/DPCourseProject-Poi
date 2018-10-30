@@ -42,7 +42,7 @@ public class MilkTea extends HomemadeGoods {
         this.sweetness = sweetness;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

@@ -1,4 +1,4 @@
-package ChainofResponsibility;
+package Requests;
 
 /**
  * @author Zhou Hongyu
@@ -6,6 +6,7 @@ package ChainofResponsibility;
 public class Request {
     private RequestCategory Category;
     private Boolean IsHandled;
+    public Object RequestBag;
 
     /**
      * @param category 类型RequestCategory, 用于初始化成员变量Category, 成员变量IsHandled初始化为false
@@ -25,7 +26,7 @@ public class Request {
     /**
      * @return 返回请求种类
      */
-    RequestCategory getCategory(){
+    public RequestCategory getCategory(){
         return Category;
     }
 }

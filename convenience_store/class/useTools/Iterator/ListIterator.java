@@ -1,6 +1,6 @@
-package Iterator;
+package useTools.Iterator;
 
-import ChainofResponsibility.Handler;
+import useTools.Handler;
 
 /**
  * @author Zhou Hongyu

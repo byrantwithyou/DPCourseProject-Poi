@@ -15,7 +15,7 @@ public class RealScanner extends Tools implements Scanner {
      */
     @Override
     public void scan(String scanType, Object scanObject) {
-        setBusy(true);
+        setIsbusy(true);
         if (scanType.equalsIgnoreCase("BarCode")) {
             System.out.println("--------------------------------------------");
             System.out.println("Scan Succeeded!");
@@ -30,6 +30,6 @@ public class RealScanner extends Tools implements Scanner {
             System.out.println("Unable to recognize the scanObject: [" + scanType + "]\nPlease check if the type of scanObject is supported.");
             System.out.println("--------------------------------------------");
         }
-        setBusy(false);
+        setIsbusy(false);
     }
 }

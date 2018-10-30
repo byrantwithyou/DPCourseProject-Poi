@@ -1,15 +1,18 @@
-package ChainofResponsibility;
-import tools.MicrowaveOven;
+package useTools;
+
+import Requests.Request;
+import Requests.RequestCategory;
+import tools.CoffeeMaker;
 
 /**
  * @author Zhou Hongyu
  */
-public class MicrowaveOvenHandler extends Handler {
+public class CoffeeMakerHandler extends Handler {
     /**
-     * @param m 将handler与一个MicrowaveOven绑定
+     * @param c 将handler与一个CoffeeMaker绑定
      */
-    public MicrowaveOvenHandler(MicrowaveOven m){
-        super(m);
+    public CoffeeMakerHandler(CoffeeMaker c) {
+        super(c);
     }
 
     /**
@@ -19,8 +22,8 @@ public class MicrowaveOvenHandler extends Handler {
      */
     @Override
     public Boolean handleReq(Request request) {
-        if(request.getCategory() == RequestCategory.heatBox && !isBusy()){
-            handle();
+        if(request.getCategory() == RequestCategory.makeCoffe && !isBusy()){
+            handle(request.RequestBag);
             request.handled();
             return true;
         }

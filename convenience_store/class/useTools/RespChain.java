@@ -1,9 +1,9 @@
-package ChainofResponsibility;
-import Iterator.myLinkedList;
-import Iterator.myIterator;
+package useTools;
+import useTools.Iterator.myLinkedList;
+import useTools.Iterator.myIterator;
+import Requests.Request;
 import tools.*;
 import tools.Scanner.RealScanner;
-import tools.Scanner.ScannerAdapter;
 
 /**
  * @author Zhou Hongyu
