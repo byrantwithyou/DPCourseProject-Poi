@@ -21,5 +21,5 @@ public class HomemadeGoods extends Goods{
 		this.maker = maker;
 	}
 
-	
+	public void printOut(){}
 }

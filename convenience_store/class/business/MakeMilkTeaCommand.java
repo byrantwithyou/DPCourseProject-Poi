@@ -12,10 +12,10 @@ import java.util.Arrays;
  * @version 0.1
  */
 public class MakeMilkTeaCommand implements UncancelCommand{
-    private OrderList receiver;
+    private OrderController receiver;
     String options;
 
-    public MakeMilkTeaCommand(OrderList receiver, String options) {
+    public MakeMilkTeaCommand(OrderController receiver, String options) {
         this.receiver = receiver;
         this.options = options;
     }
@@ -31,6 +31,6 @@ public class MakeMilkTeaCommand implements UncancelCommand{
                 Integer.parseInt(groupOptions[1]),Integer.parseInt(groupOptions[2]), adds));
         HomemadeOrderListItem item = new HomemadeOrderListItem("0",1,goods);
         receiver.addItem(item);
-        receiver.printAll();
+        receiver.updateView();
     }
 }

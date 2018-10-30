@@ -144,7 +144,7 @@ public class CashierShell {
 						" 0.cool 1.normal 2.hot\n" +
 						" 0.freesugar 1.halfsugar 2.regularsugar\n" +
 						" 0.coconut 1.pudding 2.bean");
-				MakeMilkTeaCommand mkTeaCommand = new MakeMilkTeaCommand(CashierShell.currentList,scanner.nextLine());
+				MakeMilkTeaCommand mkTeaCommand = new MakeMilkTeaCommand(CashierShell.listController,scanner.nextLine());
 				CashierShell.runCommand(mkTeaCommand);
 				continue;
 			}
