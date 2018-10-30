@@ -34,33 +34,33 @@ public class ConcreteVisitor implements Visitor {
    //对chocobread的visit
     public void visitChocolateBread(ChocolateBread chocolateBread)
     { System.out.print("商品名称："+chocolateBread.getName()
-            +"\n商品单价："+chocolateBread.getUitPrice()
-            +"\n商品公司： " +chocolateBread.getCompany()
-            +"\n商家地址： "+chocolateBread.getOriginPlace()); }
+            +"  商品单价："+chocolateBread.getUitPrice()
+            +"  商品公司： " +chocolateBread.getCompany()
+            +"  商家地址： "+chocolateBread.getOriginPlace()); }
     //对Javacoffee的visit
     public void visitJavaCoffee(JavaCoffee javaCoffee)
     { System.out.print("商品名称："+javaCoffee.getName()
-            +"\n商品单价："+javaCoffee.getUitPrice()
-            +"\n商品公司： " +javaCoffee.getCompany()
-            +"\n商家地址： "+javaCoffee.getOriginPlace()); }
+            +"  商品单价："+javaCoffee.getUitPrice()
+            +"  商品公司： " +javaCoffee.getCompany()
+            +"  商家地址： "+javaCoffee.getOriginPlace()); }
     //对dumbbell的visit
     public void visitDumbbell(Dumbbell dumbbell)
     {System.out.print("商品名称："+dumbbell.getName()
-            +"\n商品单价："+dumbbell.getUitPrice()+
-            "\n商品公司： " +dumbbell.getCompany()
-            +"\n商家地址： "+dumbbell.getOriginPlace());}
+            +"  商品单价："+dumbbell.getUitPrice()
+            +"  商品公司： " +dumbbell.getCompany()
+            +"  商家地址： "+dumbbell.getOriginPlace());}
     //对Qiaolezi的visit
     public void visitQiaoLeZi(QiaoLeZi qiaoLeZi)
     {System.out.print("商品名称："+qiaoLeZi.getName()
-            +"\n商品单价："+qiaoLeZi.getUitPrice()+
-            "\n商品公司： " +qiaoLeZi.getCompany()
-            +"\n商家地址： "+qiaoLeZi.getOriginPlace());}
+            +"  商品单价："+qiaoLeZi.getUitPrice()
+            +"  商品公司： " +qiaoLeZi.getCompany()
+            +"  商家地址： "+qiaoLeZi.getOriginPlace());}
     //对QuickNoodle的visit
     public void visitQuickNoodle(QuickNoodle quickNoodle)
     {System.out.print("商品名称："+quickNoodle.getName()
-            +"\n商品单价："+quickNoodle.getUitPrice()
-            +"\n商品公司： " +quickNoodle.getCompany()
-            +"\n商家地址： "+quickNoodle.getOriginPlace());}
+            +"  商品单价："+quickNoodle.getUitPrice()
+            +"  商品公司： " +quickNoodle.getCompany()
+            +"  商家地址： "+quickNoodle.getOriginPlace());}
 
 
 
