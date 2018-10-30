@@ -54,4 +54,9 @@ public class FlyweightPattern {
         flytemp=factory.getFlyWeight(id);
         flytemp.operation();
     }
+
+    public  int showFlyweightSize()
+    {
+        return factory.getFlyweightSize();
+    }
 }
