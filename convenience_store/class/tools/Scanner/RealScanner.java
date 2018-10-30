@@ -1,5 +1,6 @@
 package tools.Scanner;
 
+import Requests.ScanRequest;
 import tools.Tools;
 
 /**
@@ -31,5 +32,18 @@ public class RealScanner extends Tools implements Scanner {
             System.out.println("--------------------------------------------");
         }
         setIsbusy(false);
+    }
+
+    /**
+     *
+     * @param requestBag 传入执行work()所需的数据包
+     */
+    @Override
+    public void work(Object requestBag) {
+        if (!requestBag.getClass().getName().equalsIgnoreCase("Requests.ScanRequest")) {
+            System.out.println("Invalid Request Type! Must be 'ScanRequest'");
+            return;
+        }
+        scan(((ScanRequest.Input)requestBag).scanType, ((ScanRequest.Input)requestBag).scanObject);
     }
 }

@@ -8,6 +8,7 @@ public abstract class BaseTools {
 	
 
 	public abstract void work(Object requestBag);
+
 	public BaseTools() {
         this.isbusy = false;
 	}
