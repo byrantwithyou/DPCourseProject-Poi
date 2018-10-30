@@ -9,6 +9,10 @@ public class FactoryProducer {
     private FactoryProducer() {
     }
 
+    /**
+     * 创建唯一一个FactoryProducer实例
+     * @return fp FactoryProducer实例
+     */
     public static FactoryProducer instance() {
         if (fp == null) {
             fp = new FactoryProducer();
@@ -16,6 +20,11 @@ public class FactoryProducer {
         return fp;
     }
 
+    /**
+     * 根据输入的工厂类型，创建相应的工厂实例
+     * @param choice 工厂类型，0为咖啡工厂，1为奶茶工厂
+     * @return 相应的工厂实例
+     */
     public AbstractFactory getFactory(int choice) {
         if (choice == 0) {
             return new CoffeeFactory();
