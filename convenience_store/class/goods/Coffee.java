@@ -53,4 +53,8 @@ public class Coffee extends HomemadeGoods {
         return sweetness;
     }
 
+    public void printOut() {
+        System.out.println(String.format("手制咖啡 %s | heat %s | sweetness %s | price %f "
+                , this.getName(), this.getTemperature(), this.getSweetness(), this.getPrice()));
+    }
 }

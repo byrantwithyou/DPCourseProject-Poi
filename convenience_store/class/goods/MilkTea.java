@@ -72,4 +72,10 @@ public class MilkTea extends HomemadeGoods {
     public double getPrice() {
         return price;
     }
+
+    @Override
+    public void printOut() {
+        System.out.println(String.format("%s | temperature %s | sweetness %s |  price %f | topping: %s. "
+                , this.getName(), this.getTemperature(), this.getSweetness(), this.getPrice(), topping.toString()));
+    }
 }

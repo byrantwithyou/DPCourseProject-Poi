@@ -71,11 +71,4 @@ public class OrderList{
 		state = memento.orderState;
 	}
 
-	public void printAll() {
-		System.out.println("---   Current Order List   ---");
-		System.out.println("Completed:" + state + "  Visitor " + visitorID + "");
-		list.forEach(OrderListItem::printOut);
-		System.out.println("--------------------------------");
-	}
-
 }

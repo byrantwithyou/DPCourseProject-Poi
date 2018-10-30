@@ -1,5 +1,9 @@
 package business;
 
+import com.sun.tools.javac.Main;
+import goods.IceCream;
+import visitor.ConcreteVisitor;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -18,6 +22,7 @@ public class CashierShell {
 	private static OrderList currentList; //结帐单存储结构
 	private static OrderController listController;
 	private static OrderView orderView;
+
 
 	static int numCommands; //当前列表内command的数量
 	static int highWater; //当前状态表内数量
@@ -92,10 +97,12 @@ public class CashierShell {
 							"undo		| 撤销\n" +
 							"redo		| 重做\n" +
 							"print		| 打印当前结帐单内容\n" +
-							"mknew		| 新的顾客\n" +
-							"mkcoffee		| 添加制作咖啡\n" +
-							"mkmtea		| 添加制作奶茶\n" +
-							"mkicecream		| 添加制作冰激淋");
+							"mkNew		| 新的顾客\n" +
+							"mkCoffee		| 添加制作咖啡\n" +
+							"mkMTea		| 添加制作奶茶\n" +
+							"mkIceCream	[type] [size]	| 添加制作冰激淋\n" +
+							"showDepart [id]		| 展示 id 号经理下所有员工\n" +
+							"add");
 		String input;
 		Scanner scanner = new Scanner(System.in);
 		CashierShell shell = CashierShell.getInstance();
@@ -130,31 +137,50 @@ public class CashierShell {
 				continue;
 			}
 
-			if (orders[0].equals("mkcoffee")) {
-				MakeCoffeeCommand mkCoffeeCommand = new MakeCoffeeCommand();
+			if (orders[0].equals("mkCoffee")) {
+				//转换传入各个参数
+				MakeCoffeeCommand mkCoffeeCommand = new MakeCoffeeCommand(CashierShell.listController,
+						Integer.parseInt(orders[1]), Integer.parseInt(orders[2]), Integer.parseInt(orders[3]));
 				CashierShell.runCommand(mkCoffeeCommand);
 				continue;
 			}
 
-			if (orders[0].equals("mkmtea")) {
+			if (orders[0].equals("mkMTea")) {
 				System.out.println("正在添加一杯奶茶，请输入制作参数命令");
-				System.out.println(" 0.pearlMilkTea 1.taroMilkTea 2.strawberryMilkTea\n" +
+				System.out.println(" 0.RedMilkTea 1.GreenMilkTea\n" +
 						" 0.cool 1.normal 2.hot\n" +
 						" 0.freesugar 1.halfsugar 2.regularsugar\n" +
 						" 0.coconut 1.pudding 2.bean");
-				MakeMilkTeaCommand mkTeaCommand = new MakeMilkTeaCommand(CashierShell.currentList,scanner.nextLine());
+				MakeMilkTeaCommand mkTeaCommand = new MakeMilkTeaCommand(CashierShell.listController,scanner.nextLine());
 				CashierShell.runCommand(mkTeaCommand);
 				continue;
 			}
 			if (orders[0].equals("print")) {
 				CashierShell.listController.updateView();
+				continue;
 			}
 
-			if (orders[0].equals("mknew")) {
+			if (orders[0].equals("mkNew")) {
 				CashierShell.currentList = new OrderList(0);
 				CashierShell.orderView = new OrderView();
 				CashierShell.listController = new OrderController(CashierShell.currentList, CashierShell.orderView);
+				continue;
 			}
+
+			if (orders[0].equals("mkIceCream")) {
+				if(orders[1].equals("0")) {
+					IceCream iceCream = new IceCream("Vanilla",orders[2]);
+					HomemadeOrderListItem item = new HomemadeOrderListItem("100002", 1, iceCream);
+					CashierShell.listController.addItem(item);
+				} else if(orders[1].equals("1")){
+					IceCream iceCream = new IceCream("Chocolate",orders[2]);
+					HomemadeOrderListItem item = new HomemadeOrderListItem("100003", 1, iceCream);
+					CashierShell.listController.addItem(item);
+				}
+				continue;
+			}
+
+
 		}
 	}
 }

@@ -1,11 +1,14 @@
 package business;
 
+import visitor.ConcreteVisitor;
+
 /**
  * 结帐单项目
  * @author 马一帆
  * @version 0.1
  */
 public class OrderListItem implements Cloneable{
+    private static ConcreteVisitor goodsInfoGetter = new ConcreteVisitor();
     private String goodsID;
     private int amount = 1;
 
@@ -16,7 +19,10 @@ public class OrderListItem implements Cloneable{
 
     public void printOut() {
         //此处对于商品信息的读取应考虑结合visitor
-        System.out.println(this.getClass().getName() + ": " + goodsID + " " + amount);
+//        System.out.println(this.getClass().getName() + ": " + goodsID + " " + amount);
+        //以下尝试使用visitor
+        goodsInfoGetter.visit(goodsID);
+        System.out.println();
     }
 
     public String getGoodsID() {

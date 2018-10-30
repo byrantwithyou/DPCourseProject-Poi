@@ -11,7 +11,8 @@ public class HomemadeOrderListItem extends OrderListItem {
 
     @Override
     public void printOut() {
-        System.out.println("手制奶茶" + goodsInstance.getId() + "  price:" + goodsInstance.getUitPrice());
+        //System.out.println("手制奶茶" + goodsInstance.getId() + "  price:" + goodsInstance.getUitPrice());
+        goodsInstance.printOut();
     }
 
     public HomemadeOrderListItem(String goodsId, int amount, HomemadeGoods goodsInstance) {

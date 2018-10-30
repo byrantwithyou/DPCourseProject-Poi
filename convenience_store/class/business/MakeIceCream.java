@@ -5,6 +5,6 @@ package business;
  * @version 0.0.1
  *
  */
-public interface MakeIceCream extends UncancelCommand{
-	
+public interface MakeIceCream {
+    void execute();
 }
