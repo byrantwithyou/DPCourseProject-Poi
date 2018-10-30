@@ -1,5 +1,7 @@
-package ChainofResponsibility;
+package useTools;
 
+import Requests.Request;
+import Requests.RequestCategory;
 import tools.IceCreamMaker;
 
 public class IceCreamMakerHandler extends Handler {
@@ -18,7 +20,7 @@ public class IceCreamMakerHandler extends Handler {
     @Override
     public Boolean handleReq(Request request) {
         if(request.getCategory() == RequestCategory.makeIceCream && !isBusy()){
-            handle();
+            handle(request.RequestBag);
             request.handled();
             return true;
         }

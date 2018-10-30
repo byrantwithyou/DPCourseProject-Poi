@@ -1,5 +1,5 @@
 package tools;
-
+import Requests.CoffeeRequst.Req;
 import goods.Coffee;
 
 /**
@@ -18,9 +18,10 @@ public  class CoffeeMaker extends DesertMaker {
 	}
 
 	@Override
-	public void work() {
+	public void work(Object req) {
          busy=true;
-         System.out.println("Coffee is ready");
+         Req req1 = (Req)req;
+         getCoffee(req1.type, req1.temperature,req1.sweetness,req1.sweetness);
          busy=false;
 	}
 

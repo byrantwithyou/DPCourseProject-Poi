@@ -1,10 +1,12 @@
 package tools;
 
+import Requests.CoffeeRequst;
+import Requests.MilkTeaRequst;
 import goods.MilkTea;
 
 import java.util.ArrayList;
 import java.util.Vector;
-
+import Requests.MilkTeaRequst.Req;
 /**
  * 奶茶机类，用于获取指定类型的奶茶实体
  * @author liuchang
@@ -21,10 +23,11 @@ public class MilkTeaMaker extends DesertMaker {
 		busy=false;
 	}
 
-	@Override
-	public void work() {
+	//@Override
+	public void work(Object req) {
 		busy=true;
-		System.out.println("MilkTea is ready");
+		MilkTeaRequst.Req req1 = (MilkTeaRequst.Req)req;
+		getMilkTea(req1.type, req1.temperature,req1.sweetness,req1.price,req1.topping);
 		busy=false;
 	}
 
