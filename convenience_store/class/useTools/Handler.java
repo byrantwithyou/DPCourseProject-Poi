@@ -1,4 +1,5 @@
-package ChainofResponsibility;
+package useTools;
+import Requests.Request;
 import tools.*;
 
 /**
@@ -33,7 +34,7 @@ public abstract class Handler {
     /**
      * 处理请求，工具做相应的操作
      */
-    void handle(){
-        tool.work();
+    void handle(Object RequestBag){
+        tool.work(RequestBag);
     }
 }

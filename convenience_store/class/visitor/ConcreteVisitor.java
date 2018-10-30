@@ -49,7 +49,7 @@ public class ConcreteVisitor implements Visitor {
      */
     public void visit(String id)
     {
-        /*Iterator iterator=collection.iterator();
+        /*useTools.Iterator iterator=collection.iterator();
         do{
             if(collection[iterator])
         } while (iterator.hasNext());*/

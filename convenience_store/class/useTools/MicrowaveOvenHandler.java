@@ -1,15 +1,16 @@
-package ChainofResponsibility;
-
-import tools.MilkTeaMaker;
+package useTools;
+import Requests.Request;
+import Requests.RequestCategory;
+import tools.MicrowaveOven;
 
 /**
  * @author Zhou Hongyu
  */
-public class MilkTeaMakerHandler extends Handler {
+public class MicrowaveOvenHandler extends Handler {
     /**
-     * @param m 将handler与一个MilkTeaMaker绑定
+     * @param m 将handler与一个MicrowaveOven绑定
      */
-    public MilkTeaMakerHandler(MilkTeaMaker m) {
+    public MicrowaveOvenHandler(MicrowaveOven m){
         super(m);
     }
 
@@ -20,8 +21,8 @@ public class MilkTeaMakerHandler extends Handler {
      */
     @Override
     public Boolean handleReq(Request request) {
-        if(request.getCategory() == RequestCategory.makeMilkTea && !isBusy()){
-            handle();
+        if(request.getCategory() == RequestCategory.heatBox && !isBusy()){
+            handle(request.RequestBag);
             request.handled();
             return true;
         }

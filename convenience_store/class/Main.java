@@ -1,6 +1,6 @@
-import Iterator.*;
-import ChainofResponsibility.*;
-import tools.*;
+import useTools.*;
+import Requests.Request;
+import Requests.RequestCategory;
 
 public class Main {
     /**
