@@ -17,17 +17,28 @@ public class MilkTea extends HomemadeGoods {
         super();
         this.temperature = temperature;
         this.sweetness = sweetness;
-        this.price=price;
+        this.price = price;
 
-        if (topping.contains(0)){
+        if (topping.contains(0)) {
             this.topping.add("Coconut");
         }
-        if (topping.contains(1)){
+        if (topping.contains(1)) {
             this.topping.add("Pudding");
         }
-        if (topping.contains(2)){
+        if (topping.contains(2)) {
             this.topping.add("Bean");
         }
+    }
+
+    public void printOut() {
+        StringBuffer toppings = new StringBuffer("");
+        for (String temp : this.getTopping()) {
+            toppings.append(temp);
+            toppings.append(" ");
+        }
+
+        System.out.println(String.format("Produced a cup of %s, temperature %s, sweetness %s, price %f, topping: %s. "
+                , this.getName(), this.getTemperature(), this.getSweetness(), this.getPrice(), toppings.toString()));
     }
 
     public void setName(String name) {

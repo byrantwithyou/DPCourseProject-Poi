@@ -8,8 +8,4 @@ public class AmericanCoffee extends Coffee {
 
     }
 
-    public void printOut() {
-        System.out.println(String.format("Produced a cup of %s, temperature %s, sweetness %s, price %f. "
-                , this.getName(), this.getTemperature(), this.getSweetness(), this.getPrice()));
-    }
 }

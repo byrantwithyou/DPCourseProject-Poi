@@ -16,6 +16,9 @@ public class FactoryProducer {
     public static FactoryProducer instance() {
         if (fp == null) {
             fp = new FactoryProducer();
+            System.out.println("A factory producer is constructed.");
+        }else{
+            System.out.println("Only one factory producer can be constructed!");
         }
         return fp;
     }

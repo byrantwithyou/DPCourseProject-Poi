@@ -7,15 +7,6 @@ public class RedMilkTea extends MilkTea {
         super(temperature, sweetness, price, topping);
         this.setName("Red Milk Tea");
 
-        StringBuffer toppings = new StringBuffer("");
-        for (String temp : this.getTopping()) {
-            toppings.append(temp);
-            toppings.append(" ");
-        }
-    }
 
-    public void printOut(){
-        System.out.println(String.format("Produced a cup of %s, temperature %s, sweetness %s, price %f, topping: %s. "
-                , this.getName(), this.getTemperature(), this.getSweetness(), this.getPrice(), toppings.toString()));
     }
 }
