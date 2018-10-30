@@ -46,7 +46,8 @@ public class FlyweightPattern {
     }*/
     /**
      * @param id  要打印图标的商品编号
-     *            打印相应图标
+     * 01：巧克力面包 02：雀巢咖啡 03：哑铃 04：方便面 05：巧乐兹
+     * 输出：          打印相应图标
      */
     public void showFlyweight(String id)
     {

@@ -5,8 +5,8 @@ import goods.*;
 /**
  * @author 田括铜
  * @version 1.0
- * 该类为具体实现Visitor类
- * 通过调用visitor（string）函数来进行访问
+ * 该类具体实现了Visitor类
+ * 通过调用visit(String id)函数来进行访问，
  */
 
 public class ConcreteVisitor implements Visitor {
@@ -67,6 +67,7 @@ public class ConcreteVisitor implements Visitor {
     /**
      * 进行对商品的访问
      * @param id  输入商品id
+     * 01：巧克力面包 02：雀巢咖啡 03：哑铃 04：方便面 05：巧乐兹
      * 输出：依次打印商品名称，价格，公司，产地，每项之间换行，最后无换行
      */
     public void visit(String id)

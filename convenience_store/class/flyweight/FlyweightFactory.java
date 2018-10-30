@@ -19,12 +19,12 @@ public class FlyweightFactory {
         Flyweight flyweight=(Flyweight)flyweights.get(obj);
         if(flyweight==null){
             if((String)obj=="000001") {
-                flyweight = new JavaCoffeeFlyweight((String) obj);
-                flyweights.put(obj, flyweight);
-            }
-            else if((String)obj=="000002"){
                 flyweight=new ChocolaeBreadFlyweight((String)obj);
                 flyweights.put(obj,flyweight);
+            }
+            else if((String)obj=="000002"){
+                flyweight = new JavaCoffeeFlyweight((String) obj);
+                flyweights.put(obj, flyweight);
             }
             else if((String)obj=="000003"){
                 flyweight=new DumbbellFlyweight((String)obj);
