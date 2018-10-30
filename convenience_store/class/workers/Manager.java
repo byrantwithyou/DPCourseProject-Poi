@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class Manager extends Employee {
     public Manager(String id, String name) {
         super(id, name);
-        System.out.println(String.format("Manager %s constructed.",this.getName()));
     }
 
     private ArrayList<Employee> followers = new ArrayList<>();
@@ -19,7 +18,11 @@ public class Manager extends Employee {
         return s;
     }
 
-    public void printFollowes() {
+    /**
+     * 打印出该manager手下的所有员工姓名
+     *
+     */
+    public void printOut() {
         ArrayList<String> s = this.getFollowers();
         StringBuffer sb = new StringBuffer();
         for (String str : s) {
@@ -29,6 +32,11 @@ public class Manager extends Employee {
         System.out.println(sb);
     }
 
+    /**
+     * 给该manager手下增加员工
+     * @param id
+     * @param name
+     */
     public void addFollower(String id, String name) {
         Staff newStaff = new Staff(id, name);
         newStaff.setLeader_id(this.getId());

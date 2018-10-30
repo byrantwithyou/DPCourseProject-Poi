@@ -28,6 +28,7 @@ public class Coffee extends HomemadeGoods {
         this.price = price;
     }
 
+
     public void setName(String name) {
         this.name = name;
     }
