@@ -27,7 +27,14 @@ public class MilkTeaMaker extends DesertMaker {
 	public void work(Object req, Object returnObj) {
 		busy=true;
 		MilkTeaRequst.Req req1 = (MilkTeaRequst.Req)req;
-		returnObj = getMilkTea(req1.type, req1.temperature,req1.sweetness,req1.price,req1.topping);
+		MilkTea milkTea = getMilkTea(req1.type, req1.temperature,req1.sweetness,req1.price,req1.topping);
+		((MilkTea) returnObj).setName(milkTea.getName());
+		((MilkTea) returnObj).setTemperature(milkTea.getTemperature());
+		((MilkTea) returnObj).setSweetness(milkTea.getSweetness());
+		((MilkTea) returnObj).setPrice(milkTea.getPrice());
+		for(String t:milkTea.getTopping()) {
+			((MilkTea) returnObj).setTopping(t);
+		}
 		busy=false;
 	}
 
