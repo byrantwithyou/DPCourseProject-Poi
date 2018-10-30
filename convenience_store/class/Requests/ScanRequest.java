@@ -11,7 +11,7 @@ public class ScanRequest extends Request{
 
     public ScanRequest(RequestCategory category, String scanType, Object scanObject) {
         super(category);
-        this.Input = new Input(scanType, scanObject);
+        this.RequestBag = new Input(scanType, scanObject);
     }
 
     public class Input {
