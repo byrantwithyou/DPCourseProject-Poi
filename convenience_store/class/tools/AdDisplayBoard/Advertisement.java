@@ -11,9 +11,10 @@ public abstract class Advertisement {
     public Advertisement() {
     }
 
-    public Advertisement(String brand, String slogan) {
+    public Advertisement(String brand, String slogan, String type) {
         this.brand = brand;
         this.slogan = slogan;
+        this.type = type;
     }
 
     public abstract void show();

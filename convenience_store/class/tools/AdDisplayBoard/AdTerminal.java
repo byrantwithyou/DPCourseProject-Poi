@@ -7,6 +7,19 @@ import java.util.List;
  * @author Hou Xianda
  */
 public class AdTerminal {
+    /**
+     * 融合Singleton设计模式
+     */
+    public static AdTerminal instance = new AdTerminal();
+
+    private AdTerminal() {
+        adDisplayBoards = new LinkedList<>();
+    }
+
+    public static AdTerminal getInstance() {
+        return instance;
+    }
+
     private String terminalId;
 
     private List<AdDisplayBoard> adDisplayBoards;

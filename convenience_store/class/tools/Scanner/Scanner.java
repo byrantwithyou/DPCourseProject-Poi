@@ -4,7 +4,7 @@ package tools.Scanner;
 /**
  * @author Hou Xianda
  * */
-interface Scanner{
+public interface Scanner{
     /**
      *
      * @param scanType 传入扫描对象的类型

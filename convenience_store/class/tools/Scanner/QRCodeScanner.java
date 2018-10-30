@@ -3,7 +3,7 @@ package tools.Scanner;
 /**
  * @author Hou Xianda
  */
-interface QRCodeScanner {
+public interface QRCodeScanner {
     /**
      * 
      * @param scanObject 传入扫描对象
