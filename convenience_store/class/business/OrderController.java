@@ -9,8 +9,8 @@ public class OrderController {
 		this.view = view;
 	}
 	
-	public void addItem(String goodsId, int amount) {
-		order.addItem(new OrderListItem(goodsId, amount));
+	public void addItem(OrderListItem item) {
+		order.addItem(item);
 		updateView();
 	}
 	
@@ -18,8 +18,17 @@ public class OrderController {
 		order.removeItem(id);
 		updateView();
 	}
-	
+
+	public OrderListMemento createMemento() throws CloneNotSupportedException {
+		return order.createMemento();
+	}
+
+	public void reinstateMemento(OrderListMemento memento) throws CloneNotSupportedException {
+		order.reinstateMemento(memento);
+	}
+
+
 	public void updateView() {
-		view.printOrder(order.getOrder());
+		view.printOrder(order.getOrder(),order.getVisitorId(),order.getState());
 	}
 }
