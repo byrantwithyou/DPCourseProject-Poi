@@ -20,16 +20,20 @@ public class OrderList{
 		list = new ArrayList<>();
 	}
 	
+	public ArrayList<OrderListItem> getOrder(){
+		return list;
+	}
+	
 	public boolean isClosed() {
 		return state;
 	}
 
-	public int getVisitor_id() {
+	public int getVisitorId() {
 		return visitorID;
 	}
 
-	public void setVisitor_id(int visitor_id) {
-		this.visitorID = visitor_id;
+	public void setVisitorId(int visitorId) {
+		this.visitorID = visitorId;
 	}
 
 	public boolean getState() {
