@@ -16,6 +16,8 @@ public class CashierShell {
 	private static ArrayList<OrderListMemento> mementoList;
 	private static CashierShell shellInstance = null;
 	private static OrderList currentList; //结帐单存储结构
+	private static OrderController listController;
+	private static OrderView orderView;
 
 	static int numCommands; //当前列表内command的数量
 	static int highWater; //当前状态表内数量
@@ -75,6 +77,8 @@ public class CashierShell {
 			commandsList = new ArrayList<>(LIST_LENGTH);
 			mementoList = new ArrayList<>(LIST_LENGTH);
 			currentList = new OrderList(0);
+			orderView = new OrderView();
+			listController = new OrderController(currentList,orderView);
 			numCommands = highWater = 0;
 			return shellInstance;
 		}
@@ -90,7 +94,7 @@ public class CashierShell {
 							"print		| 打印当前结帐单内容\n" +
 							"mknew		| 新的顾客\n" +
 							"mkcoffee		| 添加制作咖啡\n" +
-							"mkmtea		| 添加制作奶茶" +
+							"mkmtea		| 添加制作奶茶\n" +
 							"mkicecream		| 添加制作冰激淋");
 		String input;
 		Scanner scanner = new Scanner(System.in);
@@ -103,14 +107,14 @@ public class CashierShell {
 
 			if(orders[0].equals("add")) {
 				AddCommand addCommand = new AddCommand(orders[1]);
-				addCommand.setReceiver(currentList);
+				addCommand.setReceiver(listController);
 				CashierShell.runCommand(addCommand);
 				continue;
 			}
 
 			if (orders[0].equals("rm")) {
 				RemoveCommand removeCommand = new RemoveCommand(orders[1]);
-				removeCommand.setReceiver(currentList);
+				removeCommand.setReceiver(listController);
 				CashierShell.runCommand(removeCommand);
 				continue;
 			}
@@ -122,7 +126,7 @@ public class CashierShell {
 
 			if (orders[0].equals("undo")) {
 				CashierShell.undo();
-				CashierShell.currentList.printAll();
+				CashierShell.listController.updateView();
 				continue;
 			}
 
@@ -143,11 +147,13 @@ public class CashierShell {
 				continue;
 			}
 			if (orders[0].equals("print")) {
-				CashierShell.currentList.printAll();
+				CashierShell.listController.updateView();
 			}
 
 			if (orders[0].equals("mknew")) {
 				CashierShell.currentList = new OrderList(0);
+				CashierShell.orderView = new OrderView();
+				CashierShell.listController = new OrderController(CashierShell.currentList, CashierShell.orderView);
 			}
 		}
 	}

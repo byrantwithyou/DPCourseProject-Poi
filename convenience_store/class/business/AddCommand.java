@@ -6,21 +6,16 @@ package business;
  * @version 0.1
  */
 public class AddCommand implements CancelableCommand {
-    private OrderList receiver;
+    private OrderController receiver;
     private OrderListItem item;
     @Override
     public void execute() {
         System.out.println(this.getClass().getName() + " executing");
         System.out.println("Add item " + item.getGoodsID() + " to current list");
         receiver.addItem(item);
-        receiver.printAll();
     }
 
-    public OrderList getReceiver() {
-        return receiver;
-    }
-
-    public void setReceiver(OrderList receiver) {
+    public void setReceiver(OrderController receiver) {
         this.receiver = receiver;
     }
 

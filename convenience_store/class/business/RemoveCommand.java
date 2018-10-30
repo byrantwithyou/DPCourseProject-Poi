@@ -7,7 +7,7 @@ package business;
  */
 public class RemoveCommand  implements CancelableCommand{
     private String goalID;
-    private OrderList receiver;
+    private OrderController receiver;
 
     public RemoveCommand(String goalID) {
         this.goalID = goalID;
@@ -18,14 +18,10 @@ public class RemoveCommand  implements CancelableCommand{
         System.out.println(this.getClass().getName() + " executing\n");
         System.out.println("Remove item " + goalID + "from current list");
         receiver.removeItem(goalID);
-        receiver.printAll();
     }
 
-    public void setReceiver(OrderList receiver) {
+    public void setReceiver(OrderController receiver) {
         this.receiver = receiver;
     }
 
-    public OrderList getReceiver() {
-        return receiver;
-    }
 }

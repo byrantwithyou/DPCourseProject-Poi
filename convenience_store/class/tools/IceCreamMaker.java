@@ -12,5 +12,4 @@ public class IceCreamMaker extends DesertMaker {
 	}
 
 
-
 }
