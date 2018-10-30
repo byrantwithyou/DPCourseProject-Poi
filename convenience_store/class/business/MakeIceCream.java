@@ -6,5 +6,5 @@ package business;
  *
  */
 public interface MakeIceCream extends UncancelCommand{
-
+	
 }
