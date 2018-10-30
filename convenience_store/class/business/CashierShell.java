@@ -1,13 +1,18 @@
 package business;
 
+import flyweight.FlyweightPattern;
 import goods.IceCream;
+import tools.AdDisplayBoard.*;
+import tools.Scanner.RealScanner;
+import flyweight.FlyweightPattern;
+import workers.Manager;
 
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * 收银台交互 遵循单例模式
+ * Application 面向收银台的用户级应用
  * @author 马一帆
  * @version 0.1
  */
@@ -22,6 +27,8 @@ public class CashierShell {
 	private static OrderController listController;
 	private static OrderView orderView;
 
+	private static RealScanner codeScanner = new RealScanner();
+	private static ArrayList<Manager> managers = new ArrayList<>();
 
 	static int numCommands; //当前列表内command的数量
 	static int highWater; //当前状态表内数量
@@ -83,6 +90,15 @@ public class CashierShell {
 			currentList = new OrderList(0);
 			orderView = new OrderView();
 			listController = new OrderController(currentList,orderView);
+
+			//加入一些默认经理和员工
+			managers.add(new Manager("1001","Ayase Manager"));
+			managers.get(0).addFollower("5001","Gakki");
+			managers.get(0).addFollower("5002","Yui");
+
+			//加入一个默认广告牌
+			AdTerminal.getInstance().addAdDisplayBoard(new AdDisplayBoard());
+
 			numCommands = highWater = 0;
 			return shellInstance;
 		}
@@ -91,17 +107,21 @@ public class CashierShell {
 	//Commands与Memento单元测试
 	public static void main(String[] args) throws CloneNotSupportedException {
 		System.out.println("Welcome, input commands to do something");
-		System.out.println("add [id]		| 扫码加入商品\n" +
+		System.out.println("add [id]		| 扫码加入商品 id:000001~000005\n" +
+							"printLogo [id] | 打印id商品的图片描述\n" +
 							"rm [id]		| 移除商品\n" +
 							"undo		| 撤销\n" +
 							"redo		| 重做\n" +
 							"print		| 打印当前结帐单内容\n" +
 							"mkNew		| 新的顾客\n" +
-							"mkCoffee		| 添加制作咖啡\n" +
+							"mkCoffee [type] [temperature] [sugar degree] | 添加制作咖啡\n" +
 							"mkMTea		| 添加制作奶茶\n" +
-							"mkIceCream	[type] [size]	| 添加制作冰激淋\n" +
+							"mkIceCream	[type] [size]	| 添加制作冰激淋 Type:0-Vanilla 1-Chocolate\n" +
+							"addManager [id] [name]	| 添加经理\n" +
 							"showDepart [id]		| 展示 id 号经理下所有员工\n" +
-							"add");
+							"addEmployee [mid] [id] [name] | 在 mid 号经理下加入id name员工\n" +
+							"addAdBoard 			| 添加广告牌\n" +
+							"showAd [type] [brand] [slogan]		| 所有广告牌上显示广告 Type:PicAd/VideoAd");
 		String input;
 		Scanner scanner = new Scanner(System.in);
 		CashierShell shell = CashierShell.getInstance();
@@ -112,6 +132,7 @@ public class CashierShell {
 			System.out.println("Your input:" + orders[0]);
 
 			if(orders[0].equals("add")) {
+				codeScanner.scan("BarCode",orders[1]);
 				AddCommand addCommand = new AddCommand(orders[1]);
 				addCommand.setReceiver(listController);
 				CashierShell.runCommand(addCommand);
@@ -179,7 +200,54 @@ public class CashierShell {
 				continue;
 			}
 
+			if(orders[0].equals("addManager")) {
+				Manager m = new Manager(orders[1],orders[2]);
+				managers.add(m);
+				System.out.println("添加成功，当前所有经理");
+				managers.forEach(item -> System.out.println(item.getId() + "  name:" + item.getName()));
+				continue;
+			}
+			if (orders[0].equals("showDepart")) {
+				managers.forEach(item -> {
+					if(item.getId().equals(orders[1]))
+						item.printOut();
+				});
+				continue;
+			}
 
+			if (orders[0].equals("addEmployee")) {
+				managers.forEach(item -> {
+					if (item.getId().equals(orders[1]))
+						item.addFollower(orders[1],orders[2]);
+				});
+				continue;
+			}
+
+			if (orders[0].equals("addAdBoard")) {
+				AdTerminal.getInstance().addAdDisplayBoard(new AdDisplayBoard());
+				System.out.println("添加成功 现有广告牌数量 " + AdTerminal.getInstance().getBoardsAmount());
+				continue;
+			}
+
+			if (orders[0].equals("showAd")) {
+				Advertisement advertisement;
+				if(orders[1].equalsIgnoreCase("PicAd")) {
+					advertisement = new PicAdvertisement(orders[2], orders[3]);
+					AdTerminal.getInstance().showAd(advertisement);
+				} else if (orders[1].equalsIgnoreCase("VideoAd")) {
+					advertisement = new VideoAdvertisement(orders[2], orders[3]);
+					AdTerminal.getInstance().showAd(advertisement);
+				} else {
+					System.out.println("Error! Invalid Type of Advertisement");
+				}
+				continue;
+			}
+
+			if(orders[0].equals("printLogo")) {
+				FlyweightPattern flyweightPattern=new FlyweightPattern();
+				flyweightPattern.showFlyweight(orders[1]);
+				continue;
+			}
 		}
 	}
 }

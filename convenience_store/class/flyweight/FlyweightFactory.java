@@ -18,23 +18,23 @@ public class FlyweightFactory {
     public Flyweight getFlyWeight(Object obj){
         Flyweight flyweight=(Flyweight)flyweights.get(obj);
         if(flyweight==null){
-            if((String)obj=="000001") {
+            if(((String)obj).equals("000001")) {
                 flyweight=new ChocolaeBreadFlyweight((String)obj);
                 flyweights.put(obj,flyweight);
             }
-            else if((String)obj=="000002"){
+            else if(((String)obj).equals("000002")){
                 flyweight = new JavaCoffeeFlyweight((String) obj);
                 flyweights.put(obj, flyweight);
             }
-            else if((String)obj=="000003"){
+            else if(((String)obj).equals("000003")){
                 flyweight=new DumbbellFlyweight((String)obj);
                 flyweights.put(obj,flyweight);
             }
-            else if((String)obj=="000004"){
+            else if(((String)obj).equals("000004")){
                 flyweight=new QuickNoodleFlyweight((String)obj);
                 flyweights.put(obj,flyweight);
             }
-            else if((String)obj=="000005"){
+            else if(((String)obj).equals("000005")){
                 flyweight=new QiaoLeZiFlyweight((String)obj);
                 flyweights.put(obj,flyweight);
             }
