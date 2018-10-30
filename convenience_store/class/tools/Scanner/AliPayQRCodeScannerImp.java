@@ -5,7 +5,7 @@ package tools.Scanner;
  */
 public class AliPayQRCodeScannerImp extends AliPayQRCodeScanner {
     /**
-     *
+     * 
      * @param scanObject 传入扫描对象
      */
     public void scanAliPayQRCode(Object scanObject) {

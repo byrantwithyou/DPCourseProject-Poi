@@ -9,7 +9,7 @@ public class RealScanner extends Tools implements Scanner {
     private ScannerAdapter scannerAdapter;
 
     /**
-     *
+     * 
      * @param scanType 传入扫描对象的类型（如"WeChatQRCode"）
      * @param scanObject 传入扫描对象
      */

@@ -3,20 +3,22 @@ package tools;
 public abstract class BaseTools {
 	
 	private String id;
-	
+	private boolean isBusy;
 //	private String name;
 	
 
 
 	public BaseTools() {
+        this.isBusy = false;
 	}
 
-	public boolean isBusy() {
-		return false;
+	public boolean checkIfBusy() {
+		return isBusy;
 	}
-	
-	public abstract void work();
-	
+
+    public void setBusy(boolean isBusy) {
+        this.isBusy = isBusy;
+    }
 	
 	public String getId() {
 		return id;

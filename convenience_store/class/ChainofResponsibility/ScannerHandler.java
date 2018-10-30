@@ -1,5 +1,5 @@
 package ChainofResponsibility;
-import tools.Scanner;
+import tools.Scanner.RealScanner;
 
 /**
  * @author Zhou Hongyu
@@ -8,7 +8,7 @@ public class ScannerHandler extends Handler {
     /**
      * @param s 将handler与一个Scanner绑定
      */
-    public ScannerHandler(Scanner s){
+    public ScannerHandler(RealScanner s){
         super(s);
     }
 

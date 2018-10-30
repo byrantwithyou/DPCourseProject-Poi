@@ -1,8 +1,14 @@
-package tools;
+package tools.Scanner;
 
-public abstract class Scanner extends Tools {
-	
-	public Scanner() {
-	}
-	
+
+/**
+ * @author Hou Xianda
+ * */
+interface Scanner{
+    /**
+     *
+     * @param scanType 传入扫描对象的类型
+     * @param scanObject 传入扫描对象
+     */
+    void scan(String scanType, Object scanObject);
 }

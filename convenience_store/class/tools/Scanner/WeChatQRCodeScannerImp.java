@@ -5,7 +5,7 @@ package tools.Scanner;
  */
 public class WeChatQRCodeScannerImp extends WeChatQRCodeScanner {
     /**
-     *
+     * 
      * @param scanObject 传入扫描对象
      */
     public void scanWeChatQRCode(Object scanObject) {

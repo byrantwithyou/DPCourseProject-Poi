@@ -1,12 +1,13 @@
-package tools;
+package tools.Scanner;
 
-public class QRCodeScanner extends Scanner {
-
-	public QRCodeScanner() {
-	}
-
-	@Override
-	public void work() {
-	}
-
+/**
+ * @author Hou Xianda
+ */
+interface QRCodeScanner {
+    /**
+     * 
+     * @param scanObject 传入扫描对象
+     */
+	void scanWeChatQRCode(Object scanObject);
+    void scanAliPayQRCode(Object scanObject);
 }
