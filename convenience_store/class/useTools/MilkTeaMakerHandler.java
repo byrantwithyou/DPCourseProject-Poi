@@ -23,7 +23,7 @@ public class MilkTeaMakerHandler extends Handler {
     @Override
     public Boolean handleReq(Request request) {
         if(request.getCategory() == RequestCategory.makeMilkTea && !isBusy()){
-            handle(request.RequestBag);
+            handle(request.RequestBag, request.returnObj);
             request.handled();
             return true;
         }

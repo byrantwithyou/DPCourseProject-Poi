@@ -39,7 +39,7 @@ public class RealScanner extends Tools implements Scanner {
      * @param requestBag 传入执行work()所需的数据包
      */
     @Override
-    public void work(Object requestBag) {
+    public void work(Object requestBag, Object returnObj) {
         if (!requestBag.getClass().getName().equalsIgnoreCase("Requests.ScanRequest")) {
             System.out.println("Invalid Request Type! Must be 'ScanRequest'");
             return;

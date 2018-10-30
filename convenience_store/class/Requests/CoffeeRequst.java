@@ -8,12 +8,12 @@ public class CoffeeRequst extends Request {
     /**
      * @param category 类型RequestCategory, 用于初始化成员变量Category, 成员变量IsHandled初始化为false
      */
-    public CoffeeRequst(RequestCategory category) {
-        super(category);
+    public CoffeeRequst(RequestCategory category, Object returnObj) {
+        super(category, returnObj);
     }
 
-    public CoffeeRequst(RequestCategory category,int type,int temperature,int sweetness,double price) {
-        super(category);
+    public CoffeeRequst(RequestCategory category, Object returnObj, int type,int temperature,int sweetness,double price) {
+        super(category, returnObj);
         this.RequestBag=new Req(type,temperature,sweetness,price);
     }
 

@@ -20,7 +20,7 @@ public class IceCreamMakerHandler extends Handler {
     @Override
     public Boolean handleReq(Request request) {
         if(request.getCategory() == RequestCategory.makeIceCream && !isBusy()){
-            handle(request.RequestBag);
+            handle(request.RequestBag, request.returnObj);
             request.handled();
             return true;
         }

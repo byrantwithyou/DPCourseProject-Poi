@@ -22,7 +22,7 @@ public class MicrowaveOvenHandler extends Handler {
     @Override
     public Boolean handleReq(Request request) {
         if(request.getCategory() == RequestCategory.heatBox && !isBusy()){
-            handle(request.RequestBag);
+            handle(request.RequestBag,  request.returnObj);
             request.handled();
             return true;
         }

@@ -7,7 +7,7 @@ public abstract class BaseTools {
 //	private String name;
 	
 
-	public abstract void work(Object requestBag);
+	public abstract void work(Object requestBag, Object returnObj);
 
 	public BaseTools() {
         this.isbusy = false;
