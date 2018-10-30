@@ -34,7 +34,7 @@ public abstract class Handler {
     /**
      * 处理请求，工具做相应的操作
      */
-    void handle(Object RequestBag){
-        tool.work(RequestBag);
+    void handle(Object RequestBag, Object returnObj){
+        tool.work(RequestBag, returnObj);
     }
 }

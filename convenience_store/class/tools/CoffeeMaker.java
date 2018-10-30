@@ -18,10 +18,10 @@ public  class CoffeeMaker extends DesertMaker {
 	}
 
 	@Override
-	public void work(Object req) {
+	public void work(Object req, Object returnObj) {
          busy=true;
          Req req1 = (Req)req;
-         getCoffee(req1.type, req1.temperature,req1.sweetness,req1.sweetness);
+         returnObj = getCoffee(req1.type, req1.temperature,req1.sweetness,req1.sweetness);
          busy=false;
 	}
 

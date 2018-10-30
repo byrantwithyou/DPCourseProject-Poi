@@ -24,10 +24,10 @@ public class MilkTeaMaker extends DesertMaker {
 	}
 
 	//@Override
-	public void work(Object req) {
+	public void work(Object req, Object returnObj) {
 		busy=true;
 		MilkTeaRequst.Req req1 = (MilkTeaRequst.Req)req;
-		getMilkTea(req1.type, req1.temperature,req1.sweetness,req1.price,req1.topping);
+		returnObj = getMilkTea(req1.type, req1.temperature,req1.sweetness,req1.price,req1.topping);
 		busy=false;
 	}
 

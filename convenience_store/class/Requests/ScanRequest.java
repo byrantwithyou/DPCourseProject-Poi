@@ -5,12 +5,12 @@ package Requests;
  * @version 0.1
  */
 public class ScanRequest extends Request{
-    public ScanRequest(RequestCategory category) {
-        super(category);
+    public ScanRequest(RequestCategory category, Object returnObj) {
+        super(category, returnObj);
     }
 
-    public ScanRequest(RequestCategory category, String scanType, Object scanObject) {
-        super(category);
+    public ScanRequest(RequestCategory category, Object returnObj, String scanType, Object scanObject) {
+        super(category, returnObj);
         this.RequestBag = new Input(scanType, scanObject);
     }
 

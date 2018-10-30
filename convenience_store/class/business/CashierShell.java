@@ -92,7 +92,8 @@ public class CashierShell {
 							"print		| 打印当前结帐单内容\n" +
 							"mknew		| 新的顾客\n" +
 							"mkcoffee		| 添加制作咖啡\n" +
-							"mkmtea		| 添加制作奶茶");
+							"mkmtea		| 添加制作奶茶" +
+							"mkicecream		| 添加制作冰激淋");
 		String input;
 		Scanner scanner = new Scanner(System.in);
 		CashierShell shell = CashierShell.getInstance();
