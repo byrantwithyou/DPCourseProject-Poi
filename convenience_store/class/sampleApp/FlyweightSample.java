@@ -26,6 +26,6 @@ public class FlyweightSample {
         System.out.println("\n");
         flyweightPattern.showFlyweight("000005");
         System.out.println("\n");
-        System.out.print("产生的元素数量为：  "+flyweightPattern.showFlyweightSize());
+        System.out.print("使用的元素数量为：  "+flyweightPattern.showFlyweightSize());
     }
 }
