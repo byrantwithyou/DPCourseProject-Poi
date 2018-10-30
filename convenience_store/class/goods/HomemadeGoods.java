@@ -21,5 +21,7 @@ public class HomemadeGoods extends Goods{
 		this.maker = maker;
 	}
 
-	public void printOut(){}
+	public void printOut(){
+		System.out.println("Homemade Goods, You should not arrive here");
+	}
 }

@@ -100,7 +100,9 @@ public class CashierShell {
 							"mkNew		| 新的顾客\n" +
 							"mkCoffee		| 添加制作咖啡\n" +
 							"mkMTea		| 添加制作奶茶\n" +
-							"mkIceCream	[type] [size]	| 添加制作冰激淋");
+							"mkIceCream	[type] [size]	| 添加制作冰激淋\n" +
+							"showDepart [id]		| 展示 id 号经理下所有员工\n" +
+							"add");
 		String input;
 		Scanner scanner = new Scanner(System.in);
 		CashierShell shell = CashierShell.getInstance();
@@ -145,7 +147,7 @@ public class CashierShell {
 
 			if (orders[0].equals("mkMTea")) {
 				System.out.println("正在添加一杯奶茶，请输入制作参数命令");
-				System.out.println(" 0.pearlMilkTea 1.taroMilkTea 2.strawberryMilkTea\n" +
+				System.out.println(" 0.RedMilkTea 1.GreenMilkTea\n" +
 						" 0.cool 1.normal 2.hot\n" +
 						" 0.freesugar 1.halfsugar 2.regularsugar\n" +
 						" 0.coconut 1.pudding 2.bean");
@@ -177,6 +179,8 @@ public class CashierShell {
 				}
 				continue;
 			}
+
+
 		}
 	}
 }
