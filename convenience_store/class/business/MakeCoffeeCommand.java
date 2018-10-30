@@ -10,4 +10,5 @@ public class MakeCoffeeCommand implements UncancelCommand {
     public void execute() {
         System.out.println(this.getClass().getName() + " executing\n");
     }
+    
 }
