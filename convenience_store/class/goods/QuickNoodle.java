@@ -7,11 +7,11 @@ import java.math.BigDecimal;
 /**
  * @author 田括铜
  * @version 1.0
- * 基于Basegoods建立的dumbbell类
- * 包含id为000003，价格为195
+ * 基于Basegoods建立的chocobread类
+ * 包含id为000004，价格为5.6
  */
-public class Dumbbell extends BaseGoods{
 
+public class QuickNoodle extends BaseGoods {
     private String originPlace;
     private String name;
     private String company;
@@ -27,16 +27,15 @@ public class Dumbbell extends BaseGoods{
     public String getName(){return  name;}
     public String getCompany(){return company;}
 
-    public Dumbbell() {
-
-        this.setId("000003");
-        this.setUitPrice(new BigDecimal(195));
-        this.setCompany(" Decathlon/迪卡侬");
-        this.setName("迪卡侬20公斤电镀哑铃男士健身家用");
-        this.setOriginPlace("上海市宝山区陆翔路111号正大缤纷城1F 61736960");
+    public QuickNoodle() {
+        this.setId("000004");
+        this.setUitPrice(new BigDecimal(5.6));
+        this.setCompany("昆山统一企业食品有限公司");
+        this.setName("统一生活面 汤达人日式豚骨拉面125g");
+        this.setOriginPlace("江苏省昆山经济技术开发区青阳南路301号");
     }
 
     public void accept(Visitor visitor) {
-        visitor.visitDumbbell(this);
+        visitor.visitQuickNoodle(this);
     }
 }

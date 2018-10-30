@@ -2,6 +2,8 @@ import javafx.beans.binding.ObjectExpression;
 import useTools.*;
 import Requests.Request;
 import Requests.RequestCategory;
+import goods.*;
+import flyweight.*;
 
 public class Main {
     /**
