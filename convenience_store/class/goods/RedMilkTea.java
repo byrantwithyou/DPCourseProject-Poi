@@ -15,7 +15,7 @@ public class RedMilkTea extends MilkTea {
     }
 
     public void printOut(){
-        System.out.println(String.format("Produced a cup of %s, temperature %s, sweetness %s, price %f, topping: %s. "
-                , this.getName(), this.getTemperature(), this.getSweetness(), this.getPrice(), toppings.toString()));
+//        System.out.println(String.format("Produced a cup of %s, temperature %s, sweetness %s, price %f, topping: %s. "
+//                , this.getName(), this.getTemperature(), this.getSweetness(), this.getPrice(), toppings.toString()));
     }
 }

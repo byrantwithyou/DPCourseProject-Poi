@@ -16,28 +16,29 @@ public class IceCream extends HomemadeGoods {
 	public IceCream(String category, String size) {
 		this.category = category;
 		this.size = size;
-		if (category == "Vanilla") {
+		if (category.equals("Vanilla")) {
 			this.price = 20.0;
 		}
-		if (size == "Small") {
+		if (size .equals( "Small")) {
 			this.price = this.price * 0.75;
 		}
 	}
-	public void orderIceCream() {
-		if (category == "Vanilla") {
+	@Override
+	public void printOut() {
+		if (category.equals("Vanilla")) {
 			command = new MakeVanillaIceCream();
 		}
 		else {
 			command = new MakeChocoIceCream();
 		}
 		command.execute();
-		System.out.printf("A %s one!\n", size);
-		System.out.printf("The price is %s!\n", price);
+		System.out.printf(" A %s one", size);
+		System.out.printf(" Price: %s\n", price);
 	}
 	public static void main(String[] args) {
 		IceCream a = new IceCream("Vanilla", "Big");
 		IceCream b = new IceCream("Chocolate", "Small");
-		a.orderIceCream();
-		b.orderIceCream();
+		a.printOut();
+		b.printOut();
 	}
 }

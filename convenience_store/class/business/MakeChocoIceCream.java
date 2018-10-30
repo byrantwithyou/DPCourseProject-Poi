@@ -6,6 +6,6 @@ package business;
  */
 public class MakeChocoIceCream implements MakeIceCream{
 	public void execute() {
-		System.out.println("ChocolateIceCream is Created!");
+		System.out.print("ChocolateIceCream !");
 	}
 }

@@ -76,23 +76,23 @@ public class ConcreteVisitor implements Visitor {
         do{
             if(collection[iterator])
         } while (iterator.hasNext());*/
-        if(id=="000001")
+        if(id.equals("000001"))
         {
             chocolateBreadtemp.accept(this);
         }
-        else if(id=="000002")
+        else if(id.equals("000002"))
         {
             javaCoffee.accept(this);
         }
-        else if(id=="000003")
+        else if(id.equals("000003"))
         {
             dumbbell.accept(this);
         }
-        else if(id=="000004")
+        else if(id.equals("000004"))
         {
             quickNoodle.accept(this);
         }
-        else if(id=="000005")
+        else if(id.equals("000005"))
         {
             qiaoLeZi.accept(this);
         }
