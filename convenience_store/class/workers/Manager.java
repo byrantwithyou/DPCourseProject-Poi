@@ -37,9 +37,10 @@ public class Manager extends Employee {
      * @param id
      * @param name
      */
-    public void addFollower(String id, String name) {
+    public Staff addFollower(String id, String name) {
         Staff newStaff = new Staff(id, name);
         newStaff.setLeader_id(this.getId());
         this.followers.add(newStaff);
+        return newStaff;
     }
 }

@@ -2,17 +2,17 @@ package goods;
 
 import tools.Tools;
 
-public class HomemadeGoods extends Goods{
-	
+public class HomemadeGoods extends Goods {
+
 	private Tools maker;
-	
+
 	public HomemadeGoods() {
 	}
-	
+
 	public boolean isAvailable() {
 		return true;
 	}
-	
+
 	public Tools getMaker() {
 		return maker;
 	}
@@ -21,7 +21,7 @@ public class HomemadeGoods extends Goods{
 		this.maker = maker;
 	}
 
-	public void printOut(){
+	public void printOut() {
 		System.out.println("Homemade Goods, You should not arrive here");
 	}
 }
