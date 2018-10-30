@@ -33,31 +33,31 @@ public class ConcreteVisitor implements Visitor {
    }
    //对chocobread的visit
     public void visitChocolateBread(ChocolateBread chocolateBread)
-    { System.out.print("商品名称："+chocolateBread.getName()
+    { System.out.print("名称："+chocolateBread.getName()
             +"  商品单价："+chocolateBread.getUitPrice()
             +"  商品公司： " +chocolateBread.getCompany()
             +"  商家地址： "+chocolateBread.getOriginPlace()); }
     //对Javacoffee的visit
     public void visitJavaCoffee(JavaCoffee javaCoffee)
-    { System.out.print("商品名称："+javaCoffee.getName()
+    { System.out.print("名称："+javaCoffee.getName()
             +"  商品单价："+javaCoffee.getUitPrice()
             +"  商品公司： " +javaCoffee.getCompany()
             +"  商家地址： "+javaCoffee.getOriginPlace()); }
     //对dumbbell的visit
     public void visitDumbbell(Dumbbell dumbbell)
-    {System.out.print("商品名称："+dumbbell.getName()
+    {System.out.print("名称："+dumbbell.getName()
             +"  商品单价："+dumbbell.getUitPrice()
             +"  商品公司： " +dumbbell.getCompany()
             +"  商家地址： "+dumbbell.getOriginPlace());}
     //对Qiaolezi的visit
     public void visitQiaoLeZi(QiaoLeZi qiaoLeZi)
-    {System.out.print("商品名称："+qiaoLeZi.getName()
+    {System.out.print("名称："+qiaoLeZi.getName()
             +"  商品单价："+qiaoLeZi.getUitPrice()
             +"  商品公司： " +qiaoLeZi.getCompany()
             +"  商家地址： "+qiaoLeZi.getOriginPlace());}
     //对QuickNoodle的visit
     public void visitQuickNoodle(QuickNoodle quickNoodle)
-    {System.out.print("商品名称："+quickNoodle.getName()
+    {System.out.print("名称："+quickNoodle.getName()
             +"  商品单价："+quickNoodle.getUitPrice()
             +"  商品公司： " +quickNoodle.getCompany()
             +"  商家地址： "+quickNoodle.getOriginPlace());}

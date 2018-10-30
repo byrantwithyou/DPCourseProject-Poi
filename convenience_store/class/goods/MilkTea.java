@@ -30,16 +30,16 @@ public class MilkTea extends HomemadeGoods {
         }
     }
 
-    public void printOut() {
-        StringBuffer toppings = new StringBuffer("");
-        for (String temp : this.getTopping()) {
-            toppings.append(temp);
-            toppings.append(" ");
-        }
-
-        System.out.println(String.format("Produced a cup of %s, temperature %s, sweetness %s, price %f, topping: %s. "
-                , this.getName(), this.getTemperature(), this.getSweetness(), this.getPrice(), toppings.toString()));
-    }
+//    public void printOut() {
+//        StringBuffer toppings = new StringBuffer("");
+//        for (String temp : this.getTopping()) {
+//            toppings.append(temp);
+//            toppings.append(" ");
+//        }
+//
+//        System.out.println(String.format("Produced a cup of %s, temperature %s, sweetness %s, price %f, topping: %s. "
+//                , this.getName(), this.getTemperature(), this.getSweetness(), this.getPrice(), toppings.toString()));
+//    }
 
     public void setName(String name) {
         this.name = name;
@@ -86,7 +86,7 @@ public class MilkTea extends HomemadeGoods {
 
     @Override
     public void printOut() {
-        System.out.println(String.format("%s | temperature %s | sweetness %s |  price %f | topping: %s. "
+        System.out.println(String.format("手制奶茶 %s | temperature %s | sweetness %s |  price %f | topping: %s. "
                 , this.getName(), this.getTemperature(), this.getSweetness(), this.getPrice(), topping.toString()));
     }
 }

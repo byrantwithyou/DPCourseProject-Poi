@@ -63,5 +63,7 @@ public class AdTerminal {
     public void removeDisplayBoard(int index) {
         adDisplayBoards.remove(index);
     }
+
+    public int getBoardsAmount() { return adDisplayBoards.size(); }
 }
 

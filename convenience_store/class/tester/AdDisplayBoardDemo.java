@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class AdDisplayBoardDemo {
     public static void main(String[] args) {
         AdTerminal adTerminal = AdTerminal.getInstance();
+        //加入广告板
         adTerminal.addAdDisplayBoard(new AdDisplayBoard());
         adTerminal.addAdDisplayBoard(new AdDisplayBoard());
         System.out.println("Please enter the brand of Ad:");
@@ -16,6 +17,7 @@ public class AdDisplayBoardDemo {
         String type;
         Scanner scanner = new Scanner(System.in);
         brand = scanner.nextLine();
+        //广告的内容
         System.out.println("Please enter the slogan of Ad:");
         slogan = scanner.nextLine();
         System.out.println("Please enter the type of Ad:");

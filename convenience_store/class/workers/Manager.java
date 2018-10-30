@@ -26,7 +26,7 @@ public class Manager extends Employee {
         ArrayList<String> s = this.getFollowers();
         StringBuffer sb = new StringBuffer();
         for (String str : s) {
-            sb.append(str);
+            sb.append(str + " | ");
         }
         System.out.println(String.format("%s's staffs are: ",this.getName()));
         System.out.println(sb);
