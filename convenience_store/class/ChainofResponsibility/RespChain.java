@@ -2,6 +2,8 @@ package ChainofResponsibility;
 import Iterator.myLinkedList;
 import Iterator.myIterator;
 import tools.*;
+import tools.Scanner.RealScanner;
+import tools.Scanner.ScannerAdapter;
 
 /**
  * @author Zhou Hongyu
@@ -16,7 +18,7 @@ public class RespChain {
      */
     public void addScanner(int num){
         for(int i=0; i<num; ++i){
-            chain.add(new ScannerHandler(new ScannerAdapter()));
+            chain.add(new ScannerHandler(new RealScanner()));
         }
     }
 
