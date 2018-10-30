@@ -6,7 +6,7 @@ public class IceCreamMaker extends DesertMaker {
 		super();
 	}
 
-	@Override
+
 	public void work() {
 	}
 

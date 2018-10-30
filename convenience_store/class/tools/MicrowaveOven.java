@@ -6,7 +6,7 @@ public class MicrowaveOven extends Tools {
 		
 	}
 
-	@Override
+
 	public void work() {
 		
 	}
