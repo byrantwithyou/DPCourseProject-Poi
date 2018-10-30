@@ -12,6 +12,7 @@ public class WeChatQRCodeScannerImp extends WeChatQRCodeScanner {
         System.out.println("--------------------------------------------");
         System.out.println("Scan Succeeded!");
         System.out.println("Scan Object Type : WeChat QR Code");
+        System.out.println("The Content of the scanObject: " + scanObject.toString());
         System.out.println("--------------------------------------------\n");
     }
 

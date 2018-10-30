@@ -21,6 +21,7 @@ public class RealScanner extends Tools implements Scanner {
             System.out.println("--------------------------------------------");
             System.out.println("Scan Succeeded!");
             System.out.println("Scan Object Type : Bar Code");
+            System.out.println("The Content of the scanObject: " + scanObject.toString());
             System.out.println("--------------------------------------------\n");
         } else if (scanType.equalsIgnoreCase("WeChatQRCode") || scanType.equalsIgnoreCase("AliPayQRCode")) {
             scannerAdapter = new ScannerAdapter(scanType);
