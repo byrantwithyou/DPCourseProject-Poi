@@ -21,7 +21,11 @@ public  class CoffeeMaker extends DesertMaker {
 	public void work(Object req, Object returnObj) {
          busy=true;
          Req req1 = (Req)req;
-         returnObj = getCoffee(req1.type, req1.temperature,req1.sweetness,req1.sweetness);
+         Coffee coffee = getCoffee(req1.type, req1.temperature,req1.sweetness,req1.price);
+         ((Coffee) returnObj).setName(coffee.getName());
+         ((Coffee) returnObj).setTemperature(coffee.getTemperature());
+         ((Coffee) returnObj).setSweetness(coffee.getSweetness());
+		 ((Coffee) returnObj).setPrice(coffee.getPrice());
          busy=false;
 	}
 
