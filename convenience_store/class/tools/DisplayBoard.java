@@ -7,7 +7,9 @@ public class DisplayBoard extends Tools {
 
 	}
 
+
 	public DisplayBoard() {
+
 	}
 
 	
