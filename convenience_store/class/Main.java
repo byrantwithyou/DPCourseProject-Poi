@@ -43,6 +43,6 @@ public class Main {
 //        System.out.println(iterator.Current().toString());
 //        System.out.println(iterator.First());
         RespChain respChain = new RespChain(2,4,1,1,1);
-        System.out.println(respChain.receiveReq(new Request(RequestCategory.heatBox)));
+//        System.out.println(respChain.receiveReq(new Request(RequestCategory.heatBox)));
     }
 }

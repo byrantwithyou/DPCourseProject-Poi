@@ -1,13 +1,15 @@
 package tools;
 
 public class MicrowaveOven extends Tools {
-	
-	public MicrowaveOven() {
-		
-	}
 
 	@Override
-	public void work() {
-		
+	public void work(Object requestBag, Object returnObj) {
+
 	}
+
+	public MicrowaveOven() {
+
+
+	}
+
 }
