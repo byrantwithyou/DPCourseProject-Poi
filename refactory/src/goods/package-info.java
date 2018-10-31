@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * @author cpwpml
- *
- */
-package goods;
