@@ -6,6 +6,8 @@ package system.command;
  */
 public class MakeVanillaIceCream implements MakeIceCream{
 	public void execute() {
+		System.out.println(this.getClass().getSimpleName()
+				+ ": ()" + "execute method is called: executing..");
 		System.out.println("VanillaIceCream is Created!");
 	}
 }

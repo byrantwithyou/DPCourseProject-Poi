@@ -11,6 +11,8 @@ public class OrderListMemento {
     ArrayList<OrderListItem> listState;
     boolean orderState;
     public OrderListMemento(ArrayList<OrderListItem> list,boolean currentState) throws CloneNotSupportedException {
+        System.out.println(this.getClass().getSimpleName()
+                + " OrderListMemento method is called: Constructor called : new memento is created");
         listState = new ArrayList<>();
         for (OrderListItem item:list) {
             listState.add(item.clone());

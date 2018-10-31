@@ -13,8 +13,10 @@ public class AddCommand implements CancelableCommand {
     private OrderListItem item;
     @Override
     public void execute() {
-        System.out.println(this.getClass().getName() + " executing");
-        System.out.println("Add item " + item.getGoodsID() + " to current list");
+        System.out.println(this.getClass().getSimpleName()
+                + ": ():" + " execute method is called: executing..");
+        System.out.println(this.getClass().getName() + " command executing");
+        System.out.println(this.getClass().getSimpleName() + "Add item " + item.getGoodsID() + " to current list");
         receiver.addItem(item);
     }
 

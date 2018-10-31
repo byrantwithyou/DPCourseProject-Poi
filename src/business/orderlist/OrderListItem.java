@@ -13,11 +13,14 @@ public class OrderListItem implements Cloneable{
     private int amount = 1;
 
     public OrderListItem(String goodsId,int amount) {
+        System.out.println(this.getClass().getSimpleName() + ": (goodsID " + goodsId + ") : Constructor called : is created");
         this.goodsID = goodsId;
         this.amount = amount;
     }
 
     public void printOut() {
+        System.out.println(this.getClass().getSimpleName() + " :(" + goodsID + ") :"
+                + "printOut method is called : print item information");
         //此处对于商品信息的读取应考虑结合visitor
 //        System.out.println(this.getClass().getName() + ": " + goodsID + " " + amount);
         //以下尝试使用visitor

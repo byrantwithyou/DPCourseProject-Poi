@@ -88,7 +88,7 @@ public class MilkTea extends HomemadeGoods {
 
     @Override
     public void printOut() {
-        System.out.println(String.format("手制奶茶 %s | temperature %s | sweetness %s |  price %f | topping: %s. "
+        System.out.println(String.format("手制奶茶 %s | temperature: %s | sweetness: %s |  price: %f | topping: %s. "
                 , this.getName(), this.getTemperature(), this.getSweetness(), this.getPrice(), topping.toString()));
     }
 }

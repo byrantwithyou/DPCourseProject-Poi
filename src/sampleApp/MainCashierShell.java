@@ -76,11 +76,14 @@ public class MainCashierShell {
 	}
 
 	public static void undo() throws CloneNotSupportedException {
+		System.out.println(MainCashierShell.getInstance().getClass().getSimpleName() + "(" + currentList.getVisitorId()
+				+ ")： undo method is called :" + " try to undo last command");
+
 		if(numCommands == 0) {
 			System.out.println("--- 已至可恢复末尾 ---\n");
 			return;
 		}
-		System.out.println(MainCashierShell.getInstance().getClass().getName() + " undo last command");
+
 		//CancelableCommand command = commandsList.get(numCommands - 1);
 		//应该获取receiver的，下面这样处理不太好
 		currentList.reinstateMemento(mementoList.get(numCommands - 1));
@@ -89,6 +92,9 @@ public class MainCashierShell {
 	}
 
 	public static void redo() {
+		System.out.println(MainCashierShell.getInstance().getClass().getSimpleName() + "(" + currentList.getVisitorId()
+				+ ")： redo method is called :" + " try to redo last command");
+
 		if(numCommands > highWater || commandsList.size() == 0) {
 			System.out.println("--- 已至可重做末尾 ---\n");
 			return;
@@ -102,6 +108,8 @@ public class MainCashierShell {
 		if(shellInstance != null) {
 			return shellInstance;
 		} else {
+			System.out.println("MainCashierShell" + "("
+					+ ")： Constructor called :" + " single instance is created");
 			shellInstance = new MainCashierShell();
 			commandsList = new ArrayList<>(LIST_LENGTH);
 			mementoList = new ArrayList<>(LIST_LENGTH);
@@ -124,27 +132,28 @@ public class MainCashierShell {
 
 	//Commands与Memento单元测试
 	public static void main(String[] args) throws CloneNotSupportedException {
-		System.out.println("Welcome, input commands to do something");
-		System.out.println("add [id]		| 扫码加入商品 id:000001~000005\n" +
-							"printLogo [id] | 打印id商品的图片描述\n" +
-							"rm [id]		| 移除商品\n" +
-							"undo		| 撤销\n" +
-							"redo		| 重做\n" +
-							"print		| 打印当前结帐单内容\n" +
-							"mkNew		| 新的顾客\n" +
-							"mkCoffee [type] [temperature] [sugar degree] | 添加制作咖啡\n" +
-							"mkMTea		| 添加制作奶茶\n" +
-							"mkIceCream	[type] [size]	| 添加制作冰激淋 Type:0-Vanilla 1-Chocolate\n" +
-							"addManager [id] [name]	| 添加经理\n" +
-							"showDepart [id]		| 展示 id 号经理下所有员工\n" +
-							"addEmployee [mid] [id] [name] | 在 mid 号经理下加入id name员工\n" +
-							"addAdBoard 			| 添加广告牌\n" +
-							"showAd [type] [brand] [slogan]		| 所有广告牌上显示广告 Type:PicAd/VideoAd");
 		String input;
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		@SuppressWarnings("unused")
 		MainCashierShell shell = MainCashierShell.getInstance();
+
+		System.out.println("Welcome, input commands to do something");
+		System.out.println("add [id]		| 扫码加入商品 id:000001~000005\n" +
+				"printLogo [id] | 打印id商品的图片描述\n" +
+				"rm [id]		| 移除商品\n" +
+				"undo		| 撤销\n" +
+				"redo		| 重做\n" +
+				"print		| 打印当前结帐单内容\n" +
+				"mkNew		| 新的顾客\n" +
+				"mkCoffee [type] [temperature] [sugar degree] | 添加制作咖啡\n" +
+				"mkMTea		| 添加制作奶茶\n" +
+				"mkIceCream	[type] [size]	| 添加制作冰激淋 Type:0-Vanilla 1-Chocolate\n" +
+				"addManager [id] [name]	| 添加经理\n" +
+				"showDepart [id]		| 展示 id 号经理下所有员工\n" +
+				"addEmployee [mid] [id] [name] | 在 mid 号经理下加入id name员工\n" +
+				"addAdBoard 			| 添加广告牌\n" +
+				"showAd [type] [brand] [slogan]		| 所有广告牌上显示广告 Type:PicAd/VideoAd");
 		while (scanner.hasNext()) {
 			input = scanner.nextLine();
 			String[] orders = input.split(" ");
