@@ -1,5 +1,7 @@
 package tools.adboard;
 
+import tools.Tools;
+
 import java.util.Date;
 
 /**
@@ -12,7 +14,10 @@ public class AdDisplayBoard {
      * @param ad 需要展示的广告
      */
     public static void showAd(AdTerminal adTerminal, Advertisement ad) {
+        /*
         System.out.println("The Current time is: " + new Date().toString());
         ad.show();
+        */
+        System.out.println("tools.adboard.AdDisplayBoard" + " :: " + "showAd()" + " : " + "Show Ad method called");
     }
 }

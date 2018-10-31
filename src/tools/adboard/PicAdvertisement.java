@@ -2,12 +2,13 @@ package tools.adboard;
 
 public class PicAdvertisement extends Advertisement {
     public PicAdvertisement() {
-
+        super();
+        System.out.println(this.getClass().getName() + " :: " + "PicAdvertisement()" + " : " + "Constructor called");
     }
 
     public PicAdvertisement(String brand, String slogan) {
-       this.setBrand(brand);
-       this.setSlogan(slogan);
+       super(brand, slogan);
+        System.out.println(this.getClass().getName() + " :: " + "PicAdvertisement()" + " : " + "Constructor called");
     }
 
     @Override

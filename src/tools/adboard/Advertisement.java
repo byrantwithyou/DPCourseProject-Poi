@@ -8,9 +8,10 @@ public abstract class Advertisement {
     private String slogan;
 
     public Advertisement() {
+        System.out.println(this.getClass().getName() + " :: " + "PicAdvertisement()" + " : " + "Constructor called");
     }
 
-    public Advertisement(String brand, String slogan, String type) {
+    public Advertisement(String brand, String slogan) {
         this.brand = brand;
         this.slogan = slogan;
     }

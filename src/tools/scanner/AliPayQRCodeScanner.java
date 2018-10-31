@@ -7,6 +7,11 @@ package tools.scanner;
 
 
 public abstract class AliPayQRCodeScanner implements QRCodeScanner{
+
+    public AliPayQRCodeScanner() {
+        System.out.println(this.getClass().getName() + " :: " + "AliPayQRCodeScanner()" + " : " + "Constructor called");
+    }
+
     /**
      * @param scanObject 传入扫描对象
      */
