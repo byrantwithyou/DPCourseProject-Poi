@@ -33,7 +33,7 @@ public class IceCream extends HomemadeGoods {
 			command = new MakeChocoIceCream();
 		}
 		command.execute();
-		System.out.printf(" A %s one!", size);
+		System.out.printf(" A %s one! | ", size);
 		System.out.printf(" Price: %s\n", price);
 	}
 	public static void main(String[] args) {

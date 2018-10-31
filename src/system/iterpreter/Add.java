@@ -11,6 +11,8 @@ public class Add implements Expression{
     private Expression left,right;
 
     public Add(Expression left, Expression right) {
+        System.out.println(this.getClass().getSimpleName()
+                + ": ()" + "interpret method is called: interpreting..");
         this.left = left;
         this.right = right;
     }

@@ -10,6 +10,9 @@ import java.math.BigDecimal;
  */
 public class MilkTeaPriceGetter {
     public static BigDecimal getPrice(int type, int heat, int sugar, int[] adds) {
+        System.out.println(new Object(){}.getClass().getEnclosingClass().getSimpleName()
+                + ": ()" + "getPrice method is called: calculating..");
+
         Context context = new Context();
         System.out.print(MilkTeaPriceGetter.class + " calculating ");
         System.out.printf("%d %d %d %d %d %d\n",type,heat,sugar,adds[0],adds[1],adds[2]);

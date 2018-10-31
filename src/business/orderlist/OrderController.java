@@ -5,6 +5,7 @@ public class OrderController {
 	private OrderView view;
 	
 	public OrderController(OrderList order, OrderView view) {
+		System.out.println(this.getClass().getSimpleName() + ": Constructor called : controller is created");
 		this.order = order;
 		this.view = view;
 	}

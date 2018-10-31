@@ -17,6 +17,8 @@ public class Mul implements Expression{
 
     @Override
     public BigDecimal interpret(Context context) {
+        System.out.println(this.getClass().getSimpleName()
+                + ": ()" + "interpret method is called: interpreting..");
         return left.interpret(context).multiply(right.interpret(context));
     }
 }

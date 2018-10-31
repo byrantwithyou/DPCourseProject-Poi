@@ -28,7 +28,8 @@ public class MakeMilkTeaCommand implements UncancelCommand{
 
     @Override
     public void execute() {
-        System.out.println(this.getClass().getName() + " executing\n");
+        System.out.println(this.getClass().getSimpleName()
+                + ": ()" + "execute method is called: executing..");
 
         String[] groupOptions = options.split("&|\\+");
 //        HomemadeGoods goods = new HomemadeGoods();

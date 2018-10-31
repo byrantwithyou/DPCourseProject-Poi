@@ -17,7 +17,9 @@ public class RemoveCommand  implements CancelableCommand{
 
     @Override
     public void execute() {
-        System.out.println(this.getClass().getName() + " executing\n");
+        System.out.println(this.getClass().getSimpleName()
+                + ": (): " + "execute method is called: command executing..");
+
         System.out.println("Remove item " + goalID + "from current list");
         receiver.removeItem(goalID);
     }

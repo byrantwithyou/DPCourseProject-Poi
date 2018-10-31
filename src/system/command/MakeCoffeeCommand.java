@@ -26,8 +26,9 @@ public class MakeCoffeeCommand implements UncancelCommand {
 
     @Override
     public void execute() {
+        System.out.println(this.getClass().getSimpleName()
+                + ": ()" + "execute method is called: executing..");
 
-        System.out.println(this.getClass().getName() + " executing\n");
         Coffee coffee = new Coffee();
         CoffeeRequst cfreq = new CoffeeRequst(RequestCategory.makeCoffe, coffee, type,temperature,sweetness, (type+10)*2);
         chain.receiveReq(cfreq);

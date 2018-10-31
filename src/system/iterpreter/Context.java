@@ -18,6 +18,8 @@ public class Context
     }
 
     public BigDecimal LookupValue(Variable x) {
+        System.out.println(this.getClass().getSimpleName()
+                + ": ()" + "LookupValue method is called: searching value..");
         return (BigDecimal) valueMap.get(x);
     }
 }
